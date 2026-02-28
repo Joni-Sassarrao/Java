@@ -17,7 +17,7 @@ public class Ex11_Aula_2402 {
         System.out.print("A área do triângulo é: " + area);
 
         if (area > 100)
-            System.out.print("\nA área do triângulo é maior que 100");
+            System.out.print("\nTerreno grande");
 
         sc.close();
     }
