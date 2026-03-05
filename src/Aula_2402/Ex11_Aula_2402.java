@@ -1,3 +1,5 @@
+package Aula_2402;
+
 import java.util.Scanner;
 
 public class Ex11_Aula_2402 {
