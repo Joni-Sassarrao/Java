@@ -1,34 +1,40 @@
-package Aula_0603;
-
 import java.util.Scanner;
 
+
 public class Ex21_Aula_0603 {
-    public static void main(String[] Args) {
-        Scanner sc = new Scanner(System.in);
 
-        int a,b;
 
-        System.out.print("Digite o primeiro número: ");
-        a = sc.nextInt();
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
 
-        System.out.print("Digite o segundo número: ");
-        b = sc.nextInt();
+        int x, a, b, r;
 
-        while (a > b) {
-            System.out.print("Digite um número maior que o primeiro: ");
-            b = sc.nextInt();
+        System.out.printf("Digite um número para obter a tabuada: ");
+        x = ler.nextInt();
+
+        while(x <= 0) {
+            System.out.printf("Erro! Digite apenas números positivos!");
+            System.out.printf("\nDigite um número para obter a tabuada: ");
+            x = ler.nextInt();
         }
 
-        while (b < 0) {
-            System.out.print("Digite um número positivo: ");
-            b = sc.nextInt();
+        System.out.printf("Digite o intervalo inicial da tabuada: ");
+        a = ler.nextInt();
+
+        System.out.printf("Digite o intervalo final da tabuada: ");
+        b = ler.nextInt();
+
+        while(b <= a) {
+            System.out.printf("Erro! O intervalo final deve ser maior que o inicial!");
+            System.out.printf("\nDigite o intervalo final da tabuada: ");
+            b = ler.nextInt();
         }
 
-        for (int i = 1; i <= a; i++) {
-            int t = b * i;
-            System.out.printf("%d X %d = %d\n", b, i, t);
+        for(int i=b; i>=a; i--) {
+            r = x * i;
+            System.out.printf("%d X %d = %d\n", x, i, r);
         }
 
-        sc.close();
+        ler.close();
     }
 }
