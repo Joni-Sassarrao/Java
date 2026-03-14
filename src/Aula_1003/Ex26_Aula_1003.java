@@ -10,23 +10,23 @@ public class Ex26_Aula_1003 {
     public static void main(String[] Args) {
         Scanner sc = new Scanner(System.in);
 
-        int n;
-        double soma = 0;
+        int n, soma = 0, v;
 
         System.out.print("Digite um número: ");
         n = sc.nextInt();
 
-        while (n > 100 || n <= 0) {
+        while (n >= 100 || n <= 0) {
             System.out.print("Digite um número positivo menor que 100: ");
             n = sc.nextInt();
         }
 
         for (int i = 1; i <= n; i++) {
-            double soma2 = Math.pow(i, 2) + 1;
-            soma += soma2;
+            v = (i * i) + 1;
+            System.out.println(v);
+            soma += v;
         }
 
-        System.out.print(soma);
+        System.out.printf("A soma dos valores é: %d", soma);
 
         sc.close();
     }

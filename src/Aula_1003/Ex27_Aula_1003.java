@@ -13,24 +13,26 @@ public class Ex27_Aula_1003 {
         Scanner sc = new Scanner(System.in);
 
         int n;
-        double soma = 0;
+        double s = 0, numerador = 0, denominador = 0;
 
-        System.out.print("Digite um número: ");
+
+        System.out.print("Digite a quantidade de elementos que a sequência terá: ");
         n = sc.nextInt();
 
-        while (n > 50 || n <= 0) {
-            System.out.print("Digite um número positivo menor que 50: ");
+        while (n < 1 || n > 50){
+            System.out.println("Erro! Digite apenas números entre 1 e 50!");
+            System.out.print("Digite a quantidade de elementos que a sequência terá: ");
             n = sc.nextInt();
         }
 
-        for (int i = 1; i <= n; i++) {
-            double numerador = i;
-            double demominador = i + 1;
-            double soma2 = numerador / demominador;
-            soma += soma2;
+        for (int i = 1; i <= n; i++){
+            numerador = i;
+            denominador = (i+1);
+            System.out.printf("%.0f / %.0f\n", numerador, denominador);
+            s += (numerador / denominador);
         }
 
-        System.out.print(soma);
+        System.out.printf("A soma dos valores é: %.2f", s);
 
         sc.close();
     }
