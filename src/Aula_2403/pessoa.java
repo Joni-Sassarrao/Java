@@ -8,7 +8,7 @@ public class pessoa {
 
         cliente[] listaClientes = new cliente[5];
 
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i <= 5; i++) {
             cliente c = new cliente();
 
             c.id = i;
@@ -25,11 +25,11 @@ public class pessoa {
             listaClientes[i] = c;
         }
 
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i <= 5; i++) {
             System.out.printf("\nId do usuário: " + listaClientes[i].id);
             System.out.printf("\nNome do usuário: " + listaClientes[i].nome);
             System.out.printf("\nIdade do usuário: " + listaClientes[i].idade);
-            System.out.printf("\nE-mail do usuário: " + listaClientes[i].email);
+            System.out.printf("\nE-mail do usuário: " + listaClientes[i].email + "\n\n");
         }
 
         sc.close();
