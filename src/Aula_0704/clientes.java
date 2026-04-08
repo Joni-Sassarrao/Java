@@ -1,23 +1,24 @@
 package Aula_0704;
 
 public class clientes {
-    public int id;
+    public String agencia;
+    public String conta;
+    public Double saldo;
     public String nome;
-    public int idade;
-    public String email;
 
     public clientes() {
 
     }
 
-    public clientes(int id, String nome, int idade, String email) {
-        this.id = id;
-        this.nome = nome;
-        this.idade = idade;
-        this.email = email;
+    public void depositar(double valor) {
+        this.saldo += valor;
     }
 
-    public String getCliente() {
-        return "ID " + this.id + " | " + this.nome + " | Idade " + this.idade + " | " + this.email;
+    public void sacar(double valor) {
+        this.saldo -= valor;
+    }
+
+    public double emitirSaldo() {
+        return this.saldo;
     }
 }

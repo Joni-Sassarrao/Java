@@ -1,17 +1,58 @@
 package Aula_0704;
 
+import java.util.Scanner;
+
 public class programaClientes {
     public static void main(String[] Args) {
-        clientes c1 = new clientes();
+        Scanner sc = new Scanner(System.in);
+        clientes c = new clientes();
 
-        c1.id = 1;
-        c1.nome = "João";
-        c1.idade = 19;
-        c1.email = "random@email.com";
+        int mostrar = 0;
 
-        clientes c2 = new clientes(2, "Pedro", 19, "random1@email.com");
+        while (mostrar != 5) {
+            System.out.println("\n1 - Cadastrar cliente");
+            System.out.println("2 - Depositar");
+            System.out.println("3 - Sacar Saldo");
+            System.out.println("4 - Emitir Saldo");
+            System.out.println("5 - Sair");
+            System.out.print("Digite o número: ");
+            mostrar = sc.nextInt();
 
-        System.out.println(c1.getCliente());
-        System.out.println(c2.getCliente());
+            while (mostrar > 5) {
+                System.out.println("\nErro! Digite apenas os números da opção abaixo: \n");
+                System.out.println("1 - Cadastrar cliente");
+                System.out.println("2 - Depositar");
+                System.out.println("3 - Sacar Saldo");
+                System.out.println("4 - Emitir Saldo");
+                System.out.println("5 - Sair");
+                System.out.print("Digite o número: ");
+                mostrar = sc.nextInt();
+            }
+
+            if (mostrar == 1) {
+                System.out.print("Digite sua agência: ");
+                c.agencia = sc.next();
+
+                System.out.print("Digite o nome da sua conta: ");
+                c.conta = sc.next();
+
+                System.out.print("Digite o seu saldo: ");
+                c.saldo = sc.nextDouble();
+
+                System.out.print("Digite o seu nome: ");
+                c.nome = sc.next();
+            } else if (mostrar == 2) {
+                System.out.print("Digite o quanto você quer depositar na sua conta: ");
+                c.depositar(sc.nextDouble());
+            } else if (mostrar == 3) {
+                System.out.print("Digite o quanto você quer sacar da sua conta: ");
+                c.sacar(sc.nextDouble());
+            } else if (mostrar == 4) {
+                System.out.println(c.emitirSaldo());
+            } else
+                System.out.print("Saindo...");
+        }
+
+        sc.close();
     }
 }
