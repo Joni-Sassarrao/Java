@@ -3,22 +3,30 @@ package Aula_0704;
 public class clientes {
     public String agencia;
     public String conta;
-    public Double saldo;
+    public double saldo;
     public String nome;
 
-    public clientes() {
+    public clientes(){
 
     }
 
-    public void depositar(double valor) {
-        this.saldo += valor;
+    public clientes(String agencia, String conta, double saldo, String nome) {
+        this.agencia = agencia;
+        this.conta = conta;
+        this.saldo = saldo;
+        this.nome = nome;
     }
 
-    public void sacar(double valor) {
-        this.saldo -= valor;
+    public void depositar(double valorDeposito){
+        this.saldo += valorDeposito;
     }
 
-    public double emitirSaldo() {
+    public void sacar(double valorSaque){
+        this.saldo -= valorSaque;
+    }
+
+    public double emitirSaldo(){
         return this.saldo;
     }
+
 }

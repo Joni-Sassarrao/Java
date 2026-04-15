@@ -1,9 +1,32 @@
 package Exemplo;
 
 public class Pessoa {
-    public int id;
-    public String nome;
-    public double saldo;
+    private int id;
+    private String nome;
+    private double saldo;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        if (id < 0)
+            this.id = 0;
+        else
+            this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
 
     public Pessoa() {
 
